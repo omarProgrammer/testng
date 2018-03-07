@@ -1,0 +1,10 @@
+{
+  "/talendmdm": {
+    "target": "http://18.197.4.164:8180/",
+    "secure": false
+  },
+  "/download": {
+    "target": "http://18.197.4.164:9090/",
+    "secure": false
+  }
+}

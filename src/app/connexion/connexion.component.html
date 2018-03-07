@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div class="container customContainer">
+
+  <div id="pop" class="smart-popin">
+    <div class="sp-table">
+      <div class="sp-cell">
+        <div class="sp-body">
+          <form name="connexion">
+            <!-- Modal content -->
+            <h3 class="titleBloc">Connexion</h3>
+            <div class="connectForm">
+
+              <div class="form-group">
+                <input class="inputConnect" type="text" placeholder="ID ou Adresse E-mail" name="mail" [(ngModel)]="user.mdmcustid" />
+              </div>
+
+              <div class="form-group">
+                <input class="inputConnect" type="text" placeholder="Mot de passe" name="password" />
+              </div>
+
+            </div>
+
+            <div id="buttonConnect" class="form-group">
+              <div class="flexList">
+                <div class="flexElt connexion"><input type="button" class="buttonBlue" name="connexionButton" value="Connexion" (click)="getIdCustomer()"></div>
+                <div class="flexElt linkpassword"><a class="forgetLink">Mot de passe oublié ?</a></div>
+              </div>
+            </div>
+
+            <div id="socialConnect">
+              <h3 class="titleBloc">Connexion avec...</h3>
+
+              <div class="flexList">
+                <div class="flexElt"><a><img src="../../assets/img/facebook.png" alt="Connexion Facebook" /> Facebook</a></div>
+                <div class="flexElt"><a><img src="../../assets/img/twitter.png" alt="Connexion Twitter" /> Twitter</a></div>
+                <div class="flexElt"><a><img src="../../assets/img/linkedin.png" alt="Connexion Linkedin" /> Linkedin</a></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
