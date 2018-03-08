@@ -12,6 +12,7 @@ import {Router} from '@angular/router';
 export class ConnexionComponent implements OnInit {
   public idCustomer: any;
   user: User = new User();
+  popupMode: number = 0;
   constructor(public config: ConfigService, public customerService: CustomerService, public router: Router) { }
 
   ngOnInit() {
@@ -21,8 +22,12 @@ export class ConnexionComponent implements OnInit {
     this.customerService.getPersonalDat(this.user.mdmcustid)
       .subscribe(data => {
         if (data.length > 0) {
-          console.log('ok');
-          this.router.navigate(['personalData']);
+          // console.log(data[0].customer.processconsentement.consent_total_forget);
+          if (data[0].customer.processconsentement.consent_total_forget === 'false') {
+            this.router.navigate(['personalData']);
+          } else {
+            this.popupMode = 1;
+          }
         } else {
           alert('Pas d information sur le customer merci de se connecter avec un autre customer' );
           this.config.delateDataLoclaStorige();

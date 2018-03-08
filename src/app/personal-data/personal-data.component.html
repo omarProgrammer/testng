@@ -22,13 +22,13 @@
                 <div class="nameUser">
                   <div class="tdPhoto"><img src="../../assets/img/photo.png" /></div>
                   <div class="tdName">Bonjour,<span class="firstName">{{customers.first_name}}</span></div>
+                  <div class="deconnexion" (click)="deconnect()"> Déconnexion </div>
                 </div>
               </li>
               <li class="selected"><a routerLink="/personalData"><img src="../../assets/img/personalData.png" /> Données personnelles</a></li>
               <li><a routerLink="/adresse"><img src="../../assets/img/adresse.png" /> Adresse</a></li>
               <li><a routerLink="/mesCommandes"><img src="../../assets/img/mesCommandes.png" /> Mes commandes</a></li>
               <li><a routerLink="/socialMedia"><img src="../../assets/img/socialMedia.png" /> Social Media</a></li>
-              <li><a><img src="../../assets/img/personnalisation.png" /> Personnalisation</a></li>
               <li><a routerLink="/dataProtability"><img src="../../assets/img/portabiliteData.png" /> Gérer mes données</a></li>
               <li><a routerLink="/dataProtability"><img src="../../assets/img/portabiliteData.png" /> À propos</a></li>
             </ul>
@@ -124,7 +124,12 @@
           <div class="form-group">
             <div class="flexList">
               <div class="flexElt"><label class="personalData">Suffixe:</label></div>
-              <div class="flexElt"><span><input type="text" class="form-control" name="suffix" [(ngModel)]="customersxml.primary_info.suffix"> </span> </div>
+              <div class="flexElt"><span>
+                <select class="selectpicker form-control" name="prefix" [(ngModel)]="customers.suffix" (change)="onChangeSuffix($event.target.value)">
+                    <option>Jr</option>
+                    <option>Sr</option>
+                </select>
+              </span></div>
             </div>
           </div>
 
@@ -135,6 +140,8 @@
                 <select class="selectpicker form-control" name="prefix" [(ngModel)]="customers.prefix" (change)="onChangePrefix($event.target.value)">
                     <option>Mr</option>
                     <option>Ms</option>
+                    <option>Mrs</option>
+                    <option>Dr</option>
                 </select>
               </span></div>
 

@@ -206,7 +206,12 @@ input:checked + .slider:before {
   font-weight: normal;
   font-style: normal;
 }
+.deconnexion {
+  color: #337ab7;
+  text-decoration: none;
+  cursor: pointer;
 
+}
 @font-face {
   font-family: 'montserratsemibold';
   src: url('../cssDirectory/montserratsemibold/montserrat-semibold-webfont.eot');
@@ -223,6 +228,8 @@ html, body{
   display: table;
   height: 100%;
   width: 100%;
+  background-image: url("../../assets/img/Background_.png");
+
 }
 
 footer{

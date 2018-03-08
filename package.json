@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy proxy.conf.json",
-    "build": "ng build --prod",
+    "build": "ng build --prod --base-href https://Imedhamami2.github.io/GDPR/ && angular-cli-ghpages --branch gh-pages",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

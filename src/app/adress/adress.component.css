@@ -38,7 +38,12 @@ html, body{
   width: 100%;
   background-image: url("../../assets/img/Background_.png");
 }
+.deconnexion {
+  color: #337ab7;
+  text-decoration: none;
+  cursor: pointer;
 
+}
 footer{
   display: table-row;
   background-color: #2b2b2b;

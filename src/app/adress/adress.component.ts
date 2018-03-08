@@ -52,7 +52,7 @@ export class AdressComponent implements OnInit {
     console.log(parse('Customer', this.customersxml));
     this.customerService.updateData(parse('Customer', this.customersxml))
       .subscribe(data => {
-        alert('mise a jour effectuer');
+        // alert('mise a jour effectuer');
         // console.log(data);
         if (this.mode = 2) {this.mode = 1; }
       }, error2 => {
@@ -60,5 +60,10 @@ export class AdressComponent implements OnInit {
       });
 
   }
+  // Méthode pour faire la deconnexion
+  deconnect() {
+    localStorage.clear();
+    this.router.navigate(['connexion']);
 
+  }
 }

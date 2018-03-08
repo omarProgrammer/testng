@@ -67,9 +67,10 @@ export class PersonalDataComponent implements OnInit {
   updateMyInfo() {
     console.log(parse('Customer', this.customersxml));
     console.log( this.customers);
+    this.customersxml.fullname = this.customers.last_name + ' ' + this.customers.first_name;
     this.customerService.updateData(parse('Customer', this.customersxml))
       .subscribe(data => {
-        alert('mise a jour effectuer');
+        // alert('mise a jour effectuer');
         // console.log(data);
         if (this.mode = 2) {this.mode = 1; }
         if (this.modeContact = 4) {this.modeContact = 3; }
@@ -84,6 +85,16 @@ export class PersonalDataComponent implements OnInit {
   }
   onChangePrefix(value: any) {
     this.customersxml.primary_info.prefix = value;
+
+  }
+  onChangeSuffix(value: any) {
+    this.customersxml.primary_info.suffix = value;
+
+  }
+  // Méthode pour faire la deconnexion
+  deconnect() {
+    localStorage.clear();
+    this.router.navigate(['connexion']);
 
   }
 }

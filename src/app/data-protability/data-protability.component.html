@@ -22,13 +22,14 @@
                 <div class="nameUser">
                   <div class="tdPhoto"><img src="../../assets/img/photo.png" /></div>
                   <div class="tdName">Bonjour,<span class="firstName"> {{personalInfo?.primary_info.first_name}}</span></div>
+                  <div class="deconnexion" (click)="deconnect()"> Déconnexion </div>
+
                 </div>
               </li>
               <li ><a routerLink="/personalData"><img src="../../assets/img/personalData.png" /> Données personnelles</a></li>
               <li><a routerLink="/adresse"><img src="../../assets/img/adresse.png" /> Adresse</a></li>
               <li><a routerLink="/mesCommandes"><img src="../../assets/img/mesCommandes.png" /> Mes commandes</a></li>
               <li><a routerLink="/socialMedia"><img src="../../assets/img/socialMedia.png" /> Social Media</a></li>
-              <li><a ><img src="../../assets/img/personnalisation.png" /> Personnalisation</a></li>
               <li class="selected"><a routerLink="/dataProtability"><img src="../../assets/img/portabiliteData.png" /> Gérer mes données</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -54,9 +55,9 @@
           <p>{{personalInfo?.primary_info.email}}</p>
 
           <div class="flexList">
-            <div class="flexElt"><a href="#"><img src="../../assets/img/excel.png" alt="Téléchargement Excel" /> Excel</a></div>
-            <div class="flexElt"><a href="#"><img src="../../assets/img/xml.png" alt="Téléchargement XML" /> XML</a></div>
-            <div class="flexElt"><a href="#"><img src="../../assets/img/json.png" alt="Téléchargement JSON" /> JSON</a></div>
+            <div class="flexElt"><a [attr.href]="sendMail(idUser)" target="_blank"><img src="../../assets/img/excel.png" alt="Téléchargement Excel" /> Excel</a></div>
+            <div class="flexElt"><a [attr.href]="sendMail(idUser)" target="_blank" ><img src="../../assets/img/xml.png" alt="Téléchargement XML" /> XML</a></div>
+            <div class="flexElt"><a [attr.href]="sendMail(idUser)" target="_blank" ><img src="../../assets/img/json.png" alt="Téléchargement JSON" /> JSON</a></div>
           </div>
         </div>
 

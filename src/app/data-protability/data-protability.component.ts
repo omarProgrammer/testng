@@ -26,6 +26,7 @@ export class DataProtabilityComponent implements OnInit {
               public datepipe: DatePipe) { }
 
   ngOnInit() {
+    console.log(this.idUser);
     this.customerService.getPersonalDat(this.idUser)
       .subscribe(data => {
         if (data.length > 0) {
@@ -83,8 +84,8 @@ export class DataProtabilityComponent implements OnInit {
       });
   }
   downloadAppFile(projectName: any): any {
-    // console.log(projectName)
-    return 'http://18.197.4.164:9090/download/' + projectName;
+     console.log(projectName)
+    return 'http://ec2-18-197-4-164.eu-central-1.compute.amazonaws.com:9090/download/' + projectName.trim() + '.xlsx';
   }
   chekBoxValue(value: string) {
     console.log(value);
@@ -126,5 +127,12 @@ export class DataProtabilityComponent implements OnInit {
   showForgetMe() {
    this.blockMode = ! this.blockMode;
   }
-
+  // Méthode pour faire la deconnexion
+  deconnect() {
+    localStorage.clear();
+    this.router.navigate(['connexion']);
+  }
+  sendMail(idUsers: any) {
+     return 'http://ec2-18-197-4-164.eu-central-1.compute.amazonaws.com:9095/custid/' + idUsers.trim();
+  }
 }

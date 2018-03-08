@@ -22,13 +22,13 @@
                 <div class="nameUser">
                   <div class="tdPhoto"><img src="../../assets/img/photo.png" /></div>
                   <div class="tdName">Bonjour,<span class="firstName">{{personalInfo?.primary_info.first_name}}</span></div>
+                  <div class="deconnexion" (click)="deconnect()"> Déconnexion </div>
                 </div>
               </li>
               <li ><a routerLink="/personalData"><img src="../../assets/img/personalData.png" /> Données personnelles</a></li>
               <li class="selected"><a routerLink="/adresse"><img src="../../assets/img/adresse.png" /> Adresse</a></li>
               <li><a routerLink="/mesCommandes"><img src="../../assets/img/mesCommandes.png" /> Mes commandes</a></li>
               <li><a routerLink="/socialMedia"><img src="../../assets/img/socialMedia.png" /> Social Media</a></li>
-              <li><a ><img src="../../assets/img/personnalisation.png" /> Personnalisation</a></li>
               <li><a routerLink="/dataProtability"><img src="../../assets/img/portabiliteData.png" /> Gérer mes données</a></li>
             </ul>
           </div>
